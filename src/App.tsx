@@ -1,12 +1,14 @@
+import './config/styles/scrollbar.css'
 import AppRoutes from './routes/Router'
-import GlobalStyle from './config/styles/GlobalStyle'
+import theme from './config/theme/theme'
+import { ThemeProvider, CssBaseline } from '@mui/material'
 
 function App(): JSX.Element {
 	return (
-		<>
-			<GlobalStyle />
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
 			<AppRoutes />
-		</>
+		</ThemeProvider>
 	)
 }
 
