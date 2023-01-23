@@ -62,7 +62,10 @@ export default function MeuMenu({ nome }: MeuMenuProps) {
                     cursor: 'pointer'
                 }}
             >
-                <ListItem key='Home' onClick={() => navigate('/')}>
+                <ListItem key='Home' onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate('/');
+                }}>
                     <ListItemAvatar>
                         <HomeIcon sx={{
                             width: 75,
@@ -77,7 +80,10 @@ export default function MeuMenu({ nome }: MeuMenuProps) {
 
                 {listItems && listItems.filter((item) => item.nome !== nome).map((item) => (
                     <>
-                        <ListItem key={item.nome} onClick={() => navigate(item.path)}>
+                        <ListItem key={item.nome} onClick={() => {
+                            window.scrollTo(0, 0);
+                            navigate(item.path);
+                        }}>
                             <ListItemAvatar>
                                 <Avatar sx={{
                                     width: 75,

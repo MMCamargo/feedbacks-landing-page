@@ -20,7 +20,11 @@ export const MeuCard = ({ nome, url, rota }: MeuCardProps) => {
             alignItems: 'center',
             justifyContent: 'center'
         }}
-            elevation={7} onClick={() => navigate(rota)}>
+            elevation={7} onClick={() => {
+                window.scrollTo(0, 0);
+                navigate(rota);
+            }}>
+
             <CardContent sx={{
                 display: 'flex',
                 flexDirection: 'column',
